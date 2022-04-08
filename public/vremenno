@@ -1,0 +1,15 @@
+            const obj = {
+                typeOfEnvironmentalProblem: arrayDataInformationFromMarkers[3],
+                description: arrayDataInformationFromMarkers[4],
+                dateOfPublication: arrayDataInformationFromMarkers[5],
+                likeMarker: Number(arrayDataInformationFromMarkers[6]),
+                dislikeMarker: Number(arrayDataInformationFromMarkers[7]),
+            };
+
+            fetch(`${messageApi}/${ Number(arrayDataInformationFromMarkers[2])}`,{
+                method:'put',
+                headers:{
+                    'Content-type': 'application/json'
+                },
+                body: JSON.stringify(obj),
+            });
